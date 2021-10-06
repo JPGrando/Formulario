@@ -1,0 +1,88 @@
+<ola-angular></ola-angular>
+
+<div class="container">
+  <form [formGroup]="userForm">
+    <div class="form-group">
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <label for="nomeInput">ID</label>
+            <input type="id" class="form-control" id="idInput" placeholder="O ID é automático" [disabled]="true">
+          </div>
+          <div class="col-10">
+            <label for="nome">Nome</label>
+            <input type="nome" class="form-control" id="nome" placeholder="Digite um nome" [attr.disabled]="nomeInput"
+              formControlName="nome">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label class="endeInput">Endereço</label>
+            <input type="ende" class="form-control" id="endeInput" placeholder="Digite o endereço"
+              [attr.disabled]="endeInput" formControlName="ende">
+          </div>
+          <div class="col-6">
+            <label class="cidadeInput">Cidade</label>
+            <input type="cidade" class="form-control" id="cidadeInput" placeholder="Digite a cidade"
+              [attr.disabled]="cidadeInput" formControlName="cidade">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label>Bairro</label>
+            <input type="bairro" class="form-control" id="bairroInput" placeholder="Digite o bairro"
+              [attr.disabled]="bairroInput" formControlName="bairro">
+          </div>
+          <div class="col-3">
+            <label>CEP</label>
+            <input type="cep" class="form-control" id="cepInput" placeholder="00000-000" [attr.disabled]="cepInput"
+              formControlName="cep">
+          </div>
+          <div>
+            <label>Telefone</label>
+            <input type="telefone" class="form-control" id="telefoneInput" placeholder="(xx)xxxxx-xxxx"
+              [attr.disabled]="telefoneInput" formControlName="telefone">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="row alert alert-primary mt-3 p-3" [hidden]="">
+        <input placeholder="Digite um nome a ser procurado" class="col-3" [hidden]="inputProcurar">
+        <div class="col-1">
+          <button type="button" class="btn btn-primary btn-block)" (click)="adicionar()" [hidden]="novo">Novo</button>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-primary btn-block)" (click)="alterarForm()"
+            [hidden]="alterar">Alterar</button>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-primary btn-block)" (click)="excluirForm()"
+            [hidden]="excluir">Excluir</button>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-primary btn-block)" (click)="procurarForm(inputProcurar)"
+            [hidden]="procurar">Procurar</button>
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-primary btn-block)" (click)="excluirRegistroForm()"
+            [hidden]="excluirRegistro">Excluir Registro</button>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-primary btn-block)" (click)="gravarForm()"
+            [hidden]="gravar">Gravar</button>
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-primary btn-block)" (click)="cancelarForm()"
+            [hidden]="cancelar">Cancelar</button>
+        </div>
+        
+      </div>
+    </div>
+
+
+  </form>
+
+</div>
